@@ -47,10 +47,10 @@ def handle_message(event):
     if msg_from_user == 'Data-covid':
     	message = TextSendMessage("Data COVID-19 " + negara + "\nPositif: " + positif + "\nSembuh: " + sembuh + "\nMeninggal: " + meninggal)
     	line_bot_api.reply_message(event.reply_token, message)
-    elif msg_from_user == 'kuis':
+    if msg_from_user == 'kuis':
         message = TextSendMessage("Mau pilih truth atau dare?" + "\nPilih 1 untuk truth" + "\nPilih 2 untuk dare")
         line_bot_api.reply_message(event.reply_token, message)
-        if message == '1':
+        elif message == '1':
             message = TextSendMessage("oke tunggu sebentar...")
             line_bot_api.reply_message(event.reply_token, message)
             message = TextSendMessage("Pernah ga suka sama temen sekelas? coba sebutin")
