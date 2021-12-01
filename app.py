@@ -40,6 +40,7 @@ def callback():
         abort(400)
     return 'OK'
 
+
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -50,10 +51,11 @@ def handle_message(event):
     if msg_from_user == 'kuis':
         message = TextSendMessage("Mau pilih truth atau dare?" + "\nPilih 1 untuk truth" + "\nPilih 2 untuk dare")
         line_bot_api.reply_message(event.reply_token, message)
-        elif message == '1':
+        elif msg_from_user == '1':
             message = TextSendMessage("oke tunggu sebentar...")
             line_bot_api.reply_message(event.reply_token, message)
             message = TextSendMessage("Pernah ga suka sama temen sekelas? coba sebutin")
+            line_bot_api.reply_message(event.reply_token, message)
 
 import os
 if __name__ == "__main__":
