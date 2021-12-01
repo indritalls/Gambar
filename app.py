@@ -49,11 +49,11 @@ def handle_message(event):
     	message = TextSendMessage("Data COVID-19 " + negara + "\nPositif: " + positif + "\nSembuh: " + sembuh + "\nMeninggal: " + meninggal)
     	line_bot_api.reply_message(event.reply_token, message)
         
-    elif msg_from_user == 'kuis':
+    if msg_from_user == 'kuis':
         message = TextSendMessage("Mau pilih truth atau dare?" + "\nPilih 1 untuk truth" + "\nPilih 2 untuk dare")
         line_bot_api.reply_message(event.reply_token, message)
         
-    else msg_from_user = 1:
+    if msg_from_user == 'satu':
         message = TextSendMessage("oke tunggu sebentar..." + "\nPernah ga suka sama temen sekelas? coba sebutin")
         line_bot_api.reply_message(event.reply_token, message)
        
