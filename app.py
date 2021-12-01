@@ -58,7 +58,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
         
     if msg_from_user == 'gabisa':
-        message = TextSendMessage("hukuman kamu adalah:" +"\nChat mantan kamu bilang maaf" + "\nAtau kalau gabisa atau gapunya mantan, traktir temen kamu kopi")
+        message = TextSendMessage("hukuman kamu adalah:" +"\nChat mantan kamu bilang maaf" + "\nAtau kalau gabisa atau gapunya mantan, traktir temen kamu kopi" + "\nKetik 'oke' untuk melanjutkan games ini ke teman kamu")
         line_bot_api.reply_message(event.reply_token, message)
            
        
