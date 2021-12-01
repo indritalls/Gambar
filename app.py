@@ -42,13 +42,6 @@ def callback():
         abort(400)
     return 'OK'
 
-image_message = ImageSendMessage(
-    original_content_url='https://cdn-stf.line-apps.com/line-lp/LP_feature_img_02en_01a.jpg',
-    preview_image_url='https://cdn-stf.line-apps.com/line-lp/LP_feature_img_02en_01a.jpg'
-)
-respon = requests.get(image_message)
-parsed = response.json()[0]
-
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
