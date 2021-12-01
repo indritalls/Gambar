@@ -53,11 +53,10 @@ def handle_message(event):
         message = TextSendMessage("Mau pilih truth atau dare?" + "\nPilih 1 untuk truth" + "\nPilih 2 untuk dare")
         line_bot_api.reply_message(event.reply_token, message)
         
-        elif msg_from_user == '1':
-            message = TextSendMessage("oke tunggu sebentar...")
-            line_bot_api.reply_message(event.reply_token, message)
-            message = TextSendMessage("Pernah ga suka sama temen sekelas? coba sebutin")
-            line_bot_api.reply_message(event.reply_token, message)
+    else msg_from_user == '1':
+        message = TextSendMessage("oke tunggu sebentar..." + "\nPernah ga suka sama temen sekelas? coba sebutin")
+        line_bot_api.reply_message(event.reply_token, message)
+       
 
 import os
 if __name__ == "__main__":
