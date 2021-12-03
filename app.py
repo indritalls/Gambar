@@ -63,12 +63,9 @@ def handle_message(event):
            
 @handler.add(MessageEvent, message=ImageMessage)
 def handle_image(event):
-    msg_from_user = event.message.text
+    msg_from_user = event.image.message
     if msg_from_user == 'games':
-        message = ImageSendMessage(
-            original_content_url='https://d.line-scdn.net/stf/linecorp/ja/pr/design_1.png',
-            preview_image_url='https://d.line-scdn.net/stf/linecorp/ja/pr/design_1.png'
-        )
+        message = ImageSendMessage( original_content_url='https://d.line-scdn.net/stf/linecorp/ja/pr/design_1.png', preview_image_url='https://d.line-scdn.net/stf/linecorp/ja/pr/design_1.png')
         line_bot_api.reply_message(event.reply_token, message)       
        
 
