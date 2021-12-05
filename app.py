@@ -61,13 +61,6 @@ def handle_message(event):
         message = TextSendMessage("hukuman kamu adalah:" +"\nChat mantan kamu bilang maaf" + "\nAtau kalau gabisa atau gapunya mantan, traktir temen kamu kopi" + "\nKetik 'oke' untuk melanjutkan games ini ke teman kamu")
         line_bot_api.reply_message(event.reply_token, message)
            
-@handler.add(MessageEvent, message=ImageMessage)
-def handle_image(event):
-    msg_from_user = event.image.message
-    if msg_from_user == 'games':
-        message = ImageSendMessage( original_content_url='https://d.line-scdn.net/stf/linecorp/ja/pr/design_1.png', preview_image_url='https://d.line-scdn.net/stf/linecorp/ja/pr/design_1.png')
-        line_bot_api.reply_message(event.reply_token, message)       
-       
 
 import os
 if __name__ == "__main__":
